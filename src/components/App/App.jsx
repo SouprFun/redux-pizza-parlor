@@ -5,6 +5,7 @@ import './App.css';
 import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
 import CostumerInfo from "../CustomerInfo/CustomerInfo"
+import Cartitems from '../cart/cart';
 function App() {
   const history = useHistory();
 
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/CostumerInfo" >
           <CostumerInfo />
+        </Route>
+        <Route path="/Cartitems" >
+          <Cartitems />
         </Route>
 
         <h3>

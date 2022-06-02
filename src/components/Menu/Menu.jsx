@@ -6,6 +6,8 @@ import './Menu.css';
 function PizzaMenu() {
     const dispatch = useDispatch();
     const menu = useSelector(store => store.pizza);
+    const cart =useSelector(store => store.cart)
+
 
     const fetchMenu = () => {
         axios.get('/api/pizza')
@@ -17,23 +19,25 @@ function PizzaMenu() {
         fetchMenu();
     }, []);
 
-    const sendcart = (pizza) =>{
-       
+    const sendcart = (pizza) => {
+
         console.log(pizza)
-        dispatch({type:'ADD_PIZZA', payload:{...pizza, quantity:1} })
+        dispatch({ type: 'ADD_PIZZA', payload: { ...pizza, quantity: 1 } })
+        console.log(cart)
     }
-  
+    
+
 
     return (
         <>
             <div className="menuContainer">
-                {menu.map((pizza,i) => (
+                {menu.map((pizza, i) => (
                     <div key={i} className="menuItem">
                         <img src={pizza.image_path} />
                         <h5>{pizza.name}</h5>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
-                        <button onClick={()=> sendcart(pizza)} key={pizza.id} className="addToCart">Add To Cart</button>
+                        <button onClick={() => sendcart(pizza)} key={pizza.id} className="addToCart">Add To Cart</button>
                     </div>
                 ))}
             </div>
