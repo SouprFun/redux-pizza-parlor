@@ -4,7 +4,7 @@ import { HashRouter as Router, Route, Switch, NavLink, useHistory } from 'react-
 import './App.css';
 import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
-
+import CostumerInfo from "../CustomerInfo/CustomerInfo"
 function App() {
   const history = useHistory();
 
@@ -32,6 +32,13 @@ function App() {
         <Route path="/About">
           <About />
         </Route>
+        <Route path="/CostumerInfo" >
+          <CostumerInfo />
+        </Route>
+
+        <h3>
+            <NavLink to="/CostumerInfo">NEXT</NavLink>
+          </h3>
 
       </Router>
     </div>
