@@ -22,7 +22,7 @@ function CustomerInfo() {
 
     }
     const handleSubmit = event => {
-        event.preventDeafault();
+        //event.preventDeafault();
         let customerInfo = {
             costomer_name: name,
             street_address: streetAddress,
@@ -31,7 +31,7 @@ function CustomerInfo() {
             delivery: delivery
         };
         dispatch({ type: 'COSTUMER_INFO', payload: customerInfo });
-        console.log(`costumerInfo`, { name, street, city, zip, delivery });
+        console.log(`costumerInfo`, { name, streetAddress, city, zip, delivery });
         // push
         resetInput();
     }
