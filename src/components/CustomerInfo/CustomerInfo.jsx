@@ -31,7 +31,7 @@ function CustomerInfo() {
             delivery: delivery
         };
         dispatch({ type: 'COSTUMER_INFO', payload: customerInfo });
-        console.log(`costumerIfon`, { name, street, city, zip, delivery });
+        console.log(`costumerInfo`, { name, street, city, zip, delivery });
         // push
         resetInput();
     }
@@ -42,27 +42,35 @@ function CustomerInfo() {
             <div>
                 <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
             </div>
-            <div>
-                <input placeholder='Street Address' value={streetAddress} onChange={(event) => setName(event.target.value)} />
-            </div>
-            <div>
-                <input placeholder='City' value={city} onChange={(event) => setName(event.target.value)} />
-           </div>
+  
+
 
             <div>
                 <input placeholder='Zip' value={zip} onChange={(event) => setName(event.target.value)}/>
             </div>
-            <div>
-                <h3>Pick up</h3><input type="checkbox" name="" value="pickup" />
+
+                <input placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
             </div>
             <div>
-                <h3>Delivery</h3><input type="checkbox" name="" value="delivery" />
+                <input placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
+           </div>
+
+
+            <div>
+                <input placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)}/>
+            </div>
+            <div>
+                <input type="radio" name="deliver/pickup" value="pickup" /> Pickup
+                <input type="radio" name="deliver/pickup" value="delivery" /> Delivery
             </div>
 
 
-         
+         <div>
+            <button onClick={() => handleSubmit()} >Checkout</button>
+
 
         </div>
+
         </section>
     )
 

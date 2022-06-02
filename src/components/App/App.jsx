@@ -23,7 +23,7 @@ function App() {
               <h3 >About</h3>
             </NavLink>
             <h3>
-              <NavLink to="/CheckoutItem">Checkout</NavLink>
+              <NavLink to="/CheckoutItem">Checkout<br />🛒</NavLink>
             </h3>
           </nav>
 
