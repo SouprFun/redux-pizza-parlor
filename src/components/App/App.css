@@ -13,3 +13,35 @@
 .App-title {
   font-size: 2em;
 }
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#navbar h3 {
+  padding: .5em;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#navbar h3:hover {
+  color: white;
+  background-color: black;
+}
+
+button{
+  background-color: teal;
+  border-radius: 9px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+

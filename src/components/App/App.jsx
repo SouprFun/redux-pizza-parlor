@@ -12,13 +12,15 @@ function App() {
     <div className='App'>
       <Router>
         <header className='App-header'>
-          <h3>
-            <NavLink to="/PizzaMenu">Menu</NavLink>
-          </h3>
-          <h3>
-            <NavLink to="/About">About</NavLink>
-          </h3>
-          <h1 className='App-title'>Prime Pizza</h1>
+          <nav id='navbar'>
+            <NavLink to="/PizzaMenu">
+              <h3>Order here!</h3>
+              </NavLink>
+              <h1 className='App-title'>Prime Pizza</h1>
+            <NavLink to="/About">
+              <h3 >About</h3>
+              </NavLink>
+          </nav>
         </header>
         <Route path='/' exact>
         <img src='images/pizza_photo.png' />
