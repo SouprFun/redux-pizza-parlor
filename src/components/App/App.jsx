@@ -5,6 +5,8 @@ import './App.css';
 import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
 import CostumerInfo from "../CustomerInfo/CustomerInfo"
+import CheckoutItem from '../CheckoutItem/CheckoutItem';
+
 function App() {
   const history = useHistory();
 
@@ -15,16 +17,20 @@ function App() {
           <nav id='navbar'>
             <NavLink to="/PizzaMenu">
               <h3>Order here!</h3>
-              </NavLink>
-              <h1 className='App-title'>Prime Pizza</h1>
+            </NavLink>
+            <h1 className='App-title'>Prime Pizza</h1>
             <NavLink to="/About">
               <h3 >About</h3>
-              </NavLink>
+            </NavLink>
+            <h3>
+              <NavLink to="/CheckoutItem">Checkout</NavLink>
+            </h3>
           </nav>
+
         </header>
         <Route path='/' exact>
-        <img src='images/pizza_photo.png' />
-        <p>Pizza is great.</p>
+          <img src='images/pizza_photo.png' />
+          <p>Pizza is great.</p>
         </Route>
 
         <Route path="/PizzaMenu" exact>
@@ -37,10 +43,12 @@ function App() {
         <Route path="/CostumerInfo" >
           <CostumerInfo />
         </Route>
-
+        <Route path="/CheckoutItem" >
+          <CheckoutItem />
+        </Route>
         <h3>
-            <NavLink to="/CostumerInfo">NEXT</NavLink>
-          </h3>
+          <NavLink to="/CostumerInfo">NEXT</NavLink>
+        </h3>
 
       </Router>
     </div>
