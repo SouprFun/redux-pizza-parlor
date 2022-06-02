@@ -37,7 +37,7 @@ function CustomerInfo() {
     }
 
     return (
-        <setion id="input">
+        <section id="input">
         <div>
             <div>
                 <input placeholder='Name' />
@@ -62,7 +62,7 @@ function CustomerInfo() {
 
 
         </div>
-        </setion>
+        </section>
     )
 
 
