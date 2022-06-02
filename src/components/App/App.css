@@ -13,15 +13,6 @@
 .App-title {
   font-size: 2em;
 }
-<<<<<<< HEAD
-#input, #info {
-  
-  border: 10px;
-  margin: 10px;
-  padding: 10px;
-
-}
-=======
 
 #navbar{
   display: flex;
@@ -54,4 +45,3 @@ a:active {
   text-decoration: none;
 }
 
->>>>>>> 5144e9c38ceca6e0852559775ccfb98eb3f3215a

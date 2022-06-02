@@ -26,7 +26,7 @@ function PizzaMenu() {
                         <h5>{pizza.name}</h5>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
-                        <button key={pizza.id} className="addToCart">Add To Cart</button>
+                        <button key={pizza.id} className="addToCart"  >Add To Cart</button>
                     </div>
                 ))}
             </div>
