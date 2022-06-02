@@ -11,7 +11,7 @@ function CustomerInfo() {
     let [city, setCity] = useState('');
     let [zip, setZip] = useState('');
     let [delivery, setDelivery] = useState(false);
-
+    let something = false
     const resetInput = event => {
         console.log('resetInput');
         setName(''),
@@ -21,6 +21,7 @@ function CustomerInfo() {
             setDelivery(false)
 
     }
+
     const handleSubmit = event => {
         //event.preventDeafault();
         let customerInfo = {
@@ -42,26 +43,22 @@ function CustomerInfo() {
             <div>
                 <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
             </div>
-  
-
 
             <div>
-                <input placeholder='Zip' value={zip} onChange={(event) => setName(event.target.value)}/>
-            </div>
-
                 <input placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
             </div>
+
             <div>
                 <input placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
            </div>
 
-
             <div>
                 <input placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)}/>
             </div>
+            
             <div>
-                <input type="radio" name="deliver/pickup" value="pickup" /> Pickup
-                <input type="radio" name="deliver/pickup" value="delivery" /> Delivery
+                <input type="radio" name="deliver/pickup" value="pickup" checked onChange={() => setDelivery(false)} /> Pickup
+                <input type="radio" name="deliver/pickup" value="delivery" onChange={() => setDelivery(true)} /> Delivery
             </div>
 
             <button onClick={() => handleSubmit()} >Checkout</button>
