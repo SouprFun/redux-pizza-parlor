@@ -37,19 +37,20 @@ function CustomerInfo() {
     }
 
     return (
-        <setion id="input">
+        <section id="input">
         <div>
             <div>
-                <input placeholder='Name' />
+                <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
             </div>
             <div>
-                <input placeholder='Street Address' />
+                <input placeholder='Street Address' value={streetAddress} onChange={(event) => setName(event.target.value)} />
             </div>
             <div>
-                <input placeholder='City' />
-            </div>
+                <input placeholder='City' value={city} onChange={(event) => setName(event.target.value)} />
+           </div>
+
             <div>
-                <input type="number" value={zip} placeholder='Zip' />
+                <input placeholder='Zip' value={zip} onChange={(event) => setName(event.target.value)}/>
             </div>
             <div>
                 <h3>Pick up</h3><input type="checkbox" name="" value="pickup" />
@@ -62,7 +63,7 @@ function CustomerInfo() {
 
 
         </div>
-        </setion>
+        </section>
     )
 
 
