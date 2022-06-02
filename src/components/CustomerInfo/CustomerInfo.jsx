@@ -42,12 +42,19 @@ function CustomerInfo() {
             <div>
                 <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
             </div>
+  
+
+
             <div>
+                <input placeholder='Zip' value={zip} onChange={(event) => setName(event.target.value)}/>
+            </div>
+
                 <input placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
             </div>
             <div>
                 <input placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
            </div>
+
 
             <div>
                 <input placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)}/>
