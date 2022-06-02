@@ -43,23 +43,21 @@ function CustomerInfo() {
                 <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
             </div>
             <div>
-                <input placeholder='Street Address' value={streetAddress} onChange={(event) => setName(event.target.value)} />
+                <input placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
             </div>
             <div>
-                <input placeholder='City' value={city} onChange={(event) => setName(event.target.value)} />
+                <input placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
            </div>
 
             <div>
-                <input placeholder='Zip' value={zip} onChange={(event) => setName(event.target.value)}/>
+                <input placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)}/>
             </div>
             <div>
-                <h3>Pick up</h3><input type="checkbox" name="" value="pickup" />
-            </div>
-            <div>
-                <h3>Delivery</h3><input type="checkbox" name="" value="delivery" />
+                <input type="radio" name="deliver/pickup" value="pickup" /> Pickup
+                <input type="radio" name="deliver/pickup" value="delivery" /> Delivery
             </div>
 
-
+            <button onClick={() => handleSubmit()} >Checkout</button>
 
 
         </div>
