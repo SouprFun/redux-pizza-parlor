@@ -13,6 +13,7 @@
 .App-title {
   font-size: 2em;
 }
+<<<<<<< HEAD
 #input, #info {
   
   border: 10px;
@@ -20,3 +21,37 @@
   padding: 10px;
 
 }
+=======
+
+#navbar{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#navbar h3 {
+  padding: .5em;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+#navbar h3:hover {
+  color: white;
+  background-color: black;
+}
+
+button{
+  background-color: teal;
+  border-radius: 9px;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+>>>>>>> 5144e9c38ceca6e0852559775ccfb98eb3f3215a
