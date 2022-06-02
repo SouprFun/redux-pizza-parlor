@@ -12,7 +12,7 @@ let [city, setCity] = useState('');
 let [zip, setZip] = useState('');
 let [delivery, setDelivery] = useState(false);
 
-const recentInput = event =>{
+const resetInput = event =>{
     console.log('resetInput');
     setName(''),
     setStreetAddress(''),
@@ -21,17 +21,31 @@ const recentInput = event =>{
     setDelivery(false)
 
 }
+const handleSubmit = event => {
+    event.preventDeafault();
+    let customerInfo = {
+      name: name,
+      street_address: streetAddress,
+      city: city,
+      zip: zip,
+      delivery: delivery 
+    };
+    dispatch ({type: 'COSTUMER_INFO', payload: customerInfo});
+    console.log(`costumerIfon`, {name, street, city, zip, delivery});
+    // push
+    resetInput();
+}
 
     return (
         <div>
             <input placeholder='Name' />
             <input placeholder='Street Address' />
             <input placeholder='City' />
-            <input placeholder='Zip' />
-            <h3>Pick up</h3><input type="radio" name="" value="pickup" />
-           <h3>Delivery</h3><input type="radio" name="" value="delivery" />
+            <input type="number" value={zip} placeholder='Zip' />
+            <h3>Pick up</h3><input type="checkbox" name="" value="pickup" />
+           <h3>Delivery</h3><input type="checkbox" name="" value="delivery" />
 
-           <button>/NEXT</button>
+           <button>/NEXT`</button>
 
 
         </div>
