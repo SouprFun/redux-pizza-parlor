@@ -14,7 +14,9 @@ const pizzaReducer = (state = [], action) => {
      }
      else if(action.type === 'DELETE_CART'){
          return []
-     };
+     }  else if( action.type === 'DISPLAY_MENU'){
+        return action.payload
+    }
      
     return state
 };
