@@ -31,7 +31,7 @@ function CustomerInfo() {
             delivery: delivery
         };
         dispatch({ type: 'COSTUMER_INFO', payload: customerInfo });
-        console.log(`costumerIfon`, { name, street, city, zip, delivery });
+        console.log(`costumerInfo`, { name, street, city, zip, delivery });
         // push
         resetInput();
     }
