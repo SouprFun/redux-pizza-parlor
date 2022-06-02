@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -33,6 +34,12 @@ const handleSubmit = event => {
     dispatch ({type: 'COSTUMER_INFO', payload: customerInfo});
     console.log(`costumerIfon`, {name, street, city, zip, delivery});
     // push
+
+    axios.post('api/order', {customerInfo})
+    .then (() => {
+        fetchMenu()
+    }).catch((err) => console.log('error in post', err));
+
     resetInput();
 }
 
