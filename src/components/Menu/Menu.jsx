@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import './Menu.css';
 
 function PizzaMenu (){
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function PizzaMenu (){
     return (
         <div className="menuContainer">
             {menu.map((pizza) => (
-                <div key={pizza.id}>
+                <div key={pizza.id} className="menuItem">
                     <img src={pizza.image_path}/>
                     <h5>{pizza.name}</h5>
                     <p>{pizza.description}</p>
