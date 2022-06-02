@@ -21,9 +21,19 @@ const pizzaReducer = (state = [], action) => {
     return state
 };
 
+const customerReducer =( state ={}, action)=>{
+    console.log('in customer reducer', state, action)
+
+    if(action.type === 'COSTUMER_INFO'){
+        return action.payload
+    }
+    return state
+}
+
 const storeInstance = createStore(
     combineReducers({
-        pizza : pizzaReducer
+        pizza : pizzaReducer,
+        customer: customerReducer
     }),
     applyMiddleware(logger)
 );
