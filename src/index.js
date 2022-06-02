@@ -9,15 +9,22 @@ import logger from 'redux-logger';
 const pizzaReducer = (state = [], action) => {
     console.log('in pizza reducer', state, action)
 
+      if( action.type === 'DISPLAY_MENU'){
+        return action.payload
+    }
+     
+    return state
+};
+
+const cartReducer = (state = [], action) => {
+    console.log('in cart reducer', state, action)
+
     if(action.type === 'ADD_PIZZA'){
         return [...state, action.payload ]
      }
      else if(action.type === 'DELETE_CART'){
          return []
-     }  else if( action.type === 'DISPLAY_MENU'){
-        return action.payload
-    }
-     
+     }  
     return state
 };
 
@@ -33,7 +40,8 @@ const customerReducer =( state ={}, action)=>{
 const storeInstance = createStore(
     combineReducers({
         pizza : pizzaReducer,
-        customer: customerReducer
+        customer: customerReducer,
+        cart: cartReducer
     }),
     applyMiddleware(logger)
 );
