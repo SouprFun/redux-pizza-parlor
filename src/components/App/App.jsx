@@ -6,10 +6,8 @@ import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
 import CostumerInfo from "../CustomerInfo/CustomerInfo"
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
-<<<<<<< HEAD
 
-=======
->>>>>>> f85a6f3a8527486ff2f362a5b379cd892618e49d
+
 function App() {
   const history = useHistory();
 
