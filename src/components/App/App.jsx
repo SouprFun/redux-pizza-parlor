@@ -15,20 +15,26 @@ function App() {
           <nav id='navbar'>
             <NavLink to="/PizzaMenu">
               <h3>Order here!</h3>
-              </NavLink>
-              <h1 className='App-title'>Prime Pizza</h1>
+            </NavLink>
+            <h1 className='App-title'>Prime Pizza</h1>
             <NavLink to="/About">
               <h3 >About</h3>
-              </NavLink>
+            </NavLink>
           </nav>
         </header>
         <Route path='/' exact>
-        <img src='images/pizza_photo.png' />
-        <p>Pizza is great.</p>
+          <img id="logo" src='images/logo.png' />
+          <h1>We hate pizza!</h1>
+
         </Route>
 
         <Route path="/PizzaMenu" exact>
           <PizzaMenu />
+          <h3>
+            <NavLink to="/CostumerInfo" exact>
+              NEXT
+            </NavLink>
+          </h3>
         </Route>
 
         <Route path="/About">
@@ -37,10 +43,13 @@ function App() {
         <Route path="/CostumerInfo" >
           <CostumerInfo />
         </Route>
-
-        <h3>
-            <NavLink to="/CostumerInfo">NEXT</NavLink>
-          </h3>
+        <div>
+         Instagram: @ShitPizza29
+         <br />
+         Facebook: ShitPizza29
+         <br />
+         Snapchat: @ShitPizza29
+        </div>
 
       </Router>
     </div>
