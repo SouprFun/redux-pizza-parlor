@@ -5,8 +5,12 @@ function CheckoutItem() {
     const pizza = useSelector(store => store.cart);
     let delv = ""
     console.log(pizza);
-
+    let total = 0
     console.log('customer is', customer);
+
+    for (let piece of pizza ){
+        total+= Number(piece.price);
+    }
 
     return (
         <>
@@ -18,10 +22,12 @@ function CheckoutItem() {
                 <h3>{customer.delivery ? "delivery" : "pickup"}</h3>
                 <p>{delv}</p>
             </div>
-            {pizza.map((pizzas, index) =>
-                <li id="pizza" key={index}>{pizzas.name}
-                    {pizzas.price}</li>
-            )}
+            {pizza.map((pizzas, index) =>(
+                <li id="pizza" key={index}> {pizzas.name} ${pizzas.price}</li>
+            ))}
+            <div>
+                <p>Total is: ${total}</p>
+            </div>
         </>
     )
 }

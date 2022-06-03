@@ -59,3 +59,11 @@ function App() {
 }
 
 export default App;
+
+
+// need:
+// next button at the end of checkout
+// total bill
+// food quantity
+// post formatted to have all the info
+// admin page
