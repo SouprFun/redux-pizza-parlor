@@ -60,9 +60,6 @@ function App() {
         <Route path="/CostumerInfo" >
           <CostumerInfo />
         </Route>
-     <Route>  
-<CheckoutItem />
-</Route>
       </Router>
     </div>
   );
