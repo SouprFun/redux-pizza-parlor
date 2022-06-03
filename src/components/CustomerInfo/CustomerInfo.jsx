@@ -27,14 +27,14 @@ function CustomerInfo() {
     const handleSubmit = event => {
         //event.preventDeafault();
         let customerInfo = {
-            costomer_name: name,
+            customer_name: name,
             street_address: streetAddress,
             city: city,
             zip: zip,
-            delivery: delivery
+            type: delivery
         };
-        dispatch({ type: 'COSTUMER_INFO', payload: customerInfo });
-        console.log(`costumerInfo`, { name, streetAddress, city, zip, delivery });
+        dispatch({ type: 'CUSTUMER_INFO', payload: customerInfo });
+        console.log(`custumerInfo`, { name, streetAddress, city, zip, delivery });
         history.push('/CheckoutItem')
         resetInput();
     }
@@ -59,8 +59,8 @@ function CustomerInfo() {
             </div>
             
             <div>
-                <input type="radio" name="deliver/pickup" value="pickup" checked onChange={() => setDelivery(false)} /> Pickup
-                <input type="radio" name="deliver/pickup" value="delivery" onChange={() => setDelivery(true)} /> Delivery
+                <input type="radio" name="deliver/pickup" value="pickup" checked onChange={(event) => setDelivery(event.target.value)} /> Pickup
+                <input type="radio" name="deliver/pickup" value="delivery" onChange={(event) => setDelivery(event.target.value)} /> Delivery
             </div>
 
 
