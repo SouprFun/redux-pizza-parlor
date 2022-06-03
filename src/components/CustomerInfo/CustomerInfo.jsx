@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import{ useHistory} from 'react-router-dom';
 
 
 function CustomerInfo() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
     let [name, setName] = useState('');
     let [streetAddress, setStreetAddress] = useState('');
@@ -33,7 +35,7 @@ function CustomerInfo() {
         };
         dispatch({ type: 'COSTUMER_INFO', payload: customerInfo });
         console.log(`costumerInfo`, { name, streetAddress, city, zip, delivery });
-        // push
+        history.push('/CheckoutItem')
         resetInput();
     }
 

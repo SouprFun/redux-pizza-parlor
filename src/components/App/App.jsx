@@ -5,6 +5,7 @@ import './App.css';
 import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
 import CostumerInfo from "../CustomerInfo/CustomerInfo"
+import CheckoutItem from '../CheckoutItem/CheckoutItem';
 function App() {
   const history = useHistory();
 
@@ -39,6 +40,9 @@ function App() {
 
         <Route path="/PizzaMenu" exact>
           <PizzaMenu />
+        </Route>
+        <Route path="/CheckoutItem" exact>
+          <CheckoutItem />
         </Route>
 
         <Route path="/About">
