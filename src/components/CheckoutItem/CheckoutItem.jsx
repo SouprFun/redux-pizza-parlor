@@ -1,6 +1,9 @@
 import { useSelector } from "react-redux";
+import  {useHistory} from "react-router-dom"
+import './Checkoutitem.css'
 
 function CheckoutItem() {
+    const history= useHistory();
     const customer = useSelector(store => store.customer);
     const pizza = useSelector(store => store.cart);
     let delv = ""
@@ -28,6 +31,11 @@ function CheckoutItem() {
             <div>
                 <p>Total is: ${total}</p>
             </div>
+            <h3 id="complete" 
+                onClick={()=>{ history.push('/'); alert('completed order!')}}>
+                Complete Order
+                </h3>
+               
         </>
     )
 }
