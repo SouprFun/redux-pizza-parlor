@@ -11,7 +11,7 @@ function CustomerInfo() {
     let [city, setCity] = useState('');
     let [zip, setZip] = useState('');
     let [delivery, setDelivery] = useState(false);
-
+    let something = false
     const resetInput = event => {
         console.log('resetInput');
         setName(''),
@@ -21,8 +21,9 @@ function CustomerInfo() {
             setDelivery(false)
 
     }
+
     const handleSubmit = event => {
-        event.preventDeafault();
+        //event.preventDeafault();
         let customerInfo = {
             costomer_name: name,
             street_address: streetAddress,
@@ -31,7 +32,7 @@ function CustomerInfo() {
             delivery: delivery
         };
         dispatch({ type: 'COSTUMER_INFO', payload: customerInfo });
-        console.log(`costumerInfo`, { name, street, city, zip, delivery });
+        console.log(`costumerInfo`, { name, streetAddress, city, zip, delivery });
         // push
         resetInput();
     }
@@ -44,20 +45,20 @@ function CustomerInfo() {
             </div>
   
             <div>
-            
                 <input placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
             </div>
+
             <div>
                 <input placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
            </div>
 
-
             <div>
                 <input placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)}/>
             </div>
+            
             <div>
-                <input type="radio" name="deliver/pickup" value="pickup" /> Pickup
-                <input type="radio" name="deliver/pickup" value="delivery" /> Delivery
+                <input type="radio" name="deliver/pickup" value="pickup" checked onChange={() => setDelivery(false)} /> Pickup
+                <input type="radio" name="deliver/pickup" value="delivery" onChange={() => setDelivery(true)} /> Delivery
             </div>
 
 
