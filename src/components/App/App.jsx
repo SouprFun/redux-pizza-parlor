@@ -6,6 +6,8 @@ import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
 import CostumerInfo from "../CustomerInfo/CustomerInfo"
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
+
+
 function App() {
   const history = useHistory();
 
@@ -24,6 +26,7 @@ function App() {
               <h3 >About</h3>
             </NavLink>
           </nav>
+
         </header>
         <Route path='/' exact>
           <img id="logo" src='images/logo.png' />
@@ -51,8 +54,9 @@ function App() {
         <Route path="/CostumerInfo" >
           <CostumerInfo />
         </Route>
-       
-
+     <Route>  
+<CheckoutItem />
+</Route>
       </Router>
     </div>
   );

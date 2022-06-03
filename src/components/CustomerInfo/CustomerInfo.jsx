@@ -41,7 +41,7 @@ function CustomerInfo() {
 
     return (
         <section id="input">
-        <div>
+      
             <div>
                 <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
             </div>
@@ -63,10 +63,13 @@ function CustomerInfo() {
                 <input type="radio" name="deliver/pickup" value="delivery" onChange={() => setDelivery(true)} /> Delivery
             </div>
 
+
+         <div>
             <button onClick={() => handleSubmit()} >Checkout</button>
 
 
         </div>
+
         </section>
     )
 
