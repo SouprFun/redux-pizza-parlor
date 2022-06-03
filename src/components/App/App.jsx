@@ -4,8 +4,9 @@ import { HashRouter as Router, Route, Switch, NavLink, useHistory } from 'react-
 import './App.css';
 import PizzaMenu from '../Menu/Menu';
 import About from '../About/about';
-import CostumerInfo from "../CustomerInfo/CustomerInfo"
+import CostumerInfo from "../CustomerInfo/CustomerInfo";
 import CheckoutItem from '../CheckoutItem/CheckoutItem';
+import Admin from '../Admin/admin';
 function App() {
   const history = useHistory();
 
@@ -45,9 +46,14 @@ function App() {
           <CheckoutItem />
         </Route>
 
+        <Route path="/Admin" exact>
+          <Admin />
+        </Route>
+
         <Route path="/About">
           <About />
         </Route>
+
         <Route path="/CostumerInfo" >
           <CostumerInfo />
         </Route>
