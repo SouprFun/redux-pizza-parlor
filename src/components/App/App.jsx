@@ -26,6 +26,9 @@ function App() {
             <NavLink to="/About">
               <h3 >About</h3>
             </NavLink>
+            <NavLink to="/Admin">
+              <h3>Admin</h3>
+            </NavLink>
           </nav>
 
         </header>
