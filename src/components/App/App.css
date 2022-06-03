@@ -55,4 +55,22 @@ a:active {
   padding: 8px;
   font-size: 25px;
 }
+#inputInfo {
+  background-color:rgb(208, 208, 16);
+}
+.divInfo{
 
+  margin: 20px;
+  width: 10%;
+  min-height: 100px;
+  border: 10px;
+}
+#infoInput {
+
+  width: 200%;
+  height: 25px;
+
+}
+.divPick{
+  text-align: center;
+}

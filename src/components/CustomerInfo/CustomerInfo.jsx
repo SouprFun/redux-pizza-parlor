@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import{ useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 function CustomerInfo() {
@@ -40,35 +40,37 @@ function CustomerInfo() {
     }
 
     return (
-        <section id="input">
-      
-            <div>
-                <input placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
-            </div>
-  
-            <div>
-                <input placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
-            </div>
+        <section id="inputInfo">
 
-            <div>
-                <input placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
-           </div>
-
-            <div>
-                <input placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)}/>
-            </div>
-            
-            <div>
+            <div className='divPick'>
                 <input type="radio" name="deliver/pickup" value="pickup" checked onChange={() => setDelivery(false)} /> Pickup
                 <input type="radio" name="deliver/pickup" value="delivery" onChange={() => setDelivery(true)} /> Delivery
             </div>
 
 
-         <div>
-            <button onClick={() => handleSubmit()} >Checkout</button>
+            <div className="divInfo">
+                <input id="infoInput" placeholder='Name' value={name} onChange={(event) => setName(event.target.value)} />
+            </div>
+
+            <div className="divInfo">
+                <input id="infoInput" placeholder='Street Address' value={streetAddress} onChange={(event) => setStreetAddress(event.target.value)} />
+            </div>
+
+            <div className="divInfo">
+                <input id="infoInput" placeholder='City' value={city} onChange={(event) => setCity(event.target.value)} />
+            </div>
+
+            <div className="divInfo">
+                <input id="infoInput" placeholder='Zip' value={zip} onChange={(event) => setZip(event.target.value)} />
+            </div>
 
 
-        </div>
+
+            <div>
+                <button onClick={() => handleSubmit()} >Checkout</button>
+
+
+            </div>
 
         </section>
     )
