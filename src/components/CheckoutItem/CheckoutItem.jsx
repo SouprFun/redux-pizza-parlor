@@ -1,8 +1,11 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import  {useHistory} from "react-router-dom"
+
 import './Checkoutitem.css'
+import swal from 'sweetalert';
 
 function CheckoutItem() {
+    const dispatch = useDispatch();
     const history= useHistory();
     const customer = useSelector(store => store.customer);
     const pizza = useSelector(store => store.cart);
@@ -14,9 +17,16 @@ function CheckoutItem() {
     for (let piece of pizza ){
         total+= Number(piece.price);
     }
+console.log(total);
+
+function clickhandler(total){
+    swal("Order Complete", "Thank you!", "success"); history.push('/');;
+
+}
 
     return (
         <>
+       
             <div>
                 <h3>{customer.costomer_name}</h3>
                 <h3>{customer.street_address}</h3>
@@ -32,7 +42,7 @@ function CheckoutItem() {
                 <p>Total is: ${total}</p>
             </div>
             <h3 id="complete" 
-                onClick={()=>{ history.push('/'); alert('completed order!')}}>
+                onClick={()=>clickhandler(total)}>
                 Complete Order
                 </h3>
                

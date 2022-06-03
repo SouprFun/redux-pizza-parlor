@@ -13,3 +13,12 @@
     font-size: 16px;
     display: inline-block;
 }
+#cart{
+    color: white;
+    border-radius: 10px;
+    border: solid teal;
+    background-color:thistle;
+    width:50px;
+    margin: 0 auto;
+    cursor:pointer;  
+}
