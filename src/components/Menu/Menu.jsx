@@ -1,9 +1,12 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from 'react-router-dom';
+
 import './Menu.css';
 
 function PizzaMenu() {
+    const history = useHistory();
     const dispatch = useDispatch();
     const menu = useSelector(store => store.pizza);
 
@@ -37,7 +40,7 @@ function PizzaMenu() {
                     </div>
                 ))}
             </div>
-            <button id="cartButton">Cart</button>
+            <button onClick={()=> history.push('/CostumerInfo')} id="cartButton">Cart</button>
         </>
     )
 }
