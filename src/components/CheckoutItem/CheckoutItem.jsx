@@ -3,6 +3,7 @@ import  {useHistory} from "react-router-dom"
 
 import './Checkoutitem.css'
 import swal from 'sweetalert';
+import axios from "axios";
 
 function CheckoutItem() {
     const dispatch = useDispatch();
@@ -20,7 +21,15 @@ function CheckoutItem() {
 console.log(total);
 
 function clickhandler(total){
-    swal("Order Complete", "Thank you!", "success"); history.push('/');;
+    
+    axios.post('/api/order', {
+        ...customer,
+        pizzas: pizza,
+        total: total
+    }).then(response => {
+        swal("Order Complete", "Thank you!", "success");
+        history.push('/');
+    })
 
 }
 
@@ -28,11 +37,11 @@ function clickhandler(total){
         <>
        
             <div>
-                <h3>{customer.costomer_name}</h3>
+                <h3>{customer.customer_name}</h3>
                 <h3>{customer.street_address}</h3>
                 <h3>{customer.city}</h3>
                 <h3>{customer.zip}</h3>
-                <h3>{customer.delivery ? "delivery" : "pickup"}</h3>
+                <h3>{customer.type}</h3>
                 <p>{delv}</p>
             </div>
             {pizza.map((pizzas, index) =>(

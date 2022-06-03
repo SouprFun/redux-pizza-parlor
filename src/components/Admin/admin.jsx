@@ -1,25 +1,44 @@
-import { useSelector } from "react-redux";
-function Admin(){
-    let total =0;
-    const customer = useSelector(store => store.customer);
-    const pizza = useSelector(store => store.cart);
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-    console.log('in admin, pizza:', pizza);
-    console.log('in admin, customer:', customer);
-    for (let piece of pizza ){
-        total+= Number(piece.price);
+
+function Admin() {
+    let [orders, setOrder] = useState([]);
+
+    function fetchOrders() {
+        console.log('in fetch');
+        axios.get('/api/order')
+            .then((response) => {
+                setOrder(response.data);
+            }).catch(err => (console.log(err)))
     }
-    return(
-        
-        
-        <>
-        {console.log(customer)}
-        {console.log(pizza)}
-      
-        <p>{customer.costomer_name}</p>
-        <p>{customer.delivery ? "delivery" : "pickup"}</p>
-        <p>{total}</p>
-        </>
+
+    useEffect(() => {
+        fetchOrders()
+    }, [])
+
+    return (
+
+        <table>
+            <thead>
+                <th>name</th>
+                <th>address</th>
+                <th>delivery type</th>
+                <th>total</th>
+            </thead>
+            <tbody>
+                {orders.map(order => (
+                    <tr>
+                        <td>{order.customer_name}</td>
+                        <td>{order.street_address}</td>
+                        <td>{order.type}</td>
+                        <td>{order.total}</td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+
+
 
 
     )

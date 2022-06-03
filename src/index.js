@@ -31,7 +31,7 @@ const cartReducer = (state = [], action) => {
 const customerReducer =( state ={}, action)=>{
     console.log('in customer reducer', state, action)
 
-    if(action.type === 'COSTUMER_INFO'){
+    if(action.type === 'CUSTUMER_INFO'){
         return action.payload
     }
     return state
